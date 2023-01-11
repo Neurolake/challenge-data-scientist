@@ -1,0 +1,49 @@
+name: Branch fast-forward-ness checker
+
+on:
+  pull_request:
+    branches: [main, development, master]
+  pull_request_review:
+    branches: [main, development, master]
+  pull_request_review_comment:
+    branches: [main, development, master]
+
+jobs:
+  CHECK:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Fetching Main branch
+        run: |
+          if [ ! -z ${{ github.base_ref }} ]; then
+            git fetch origin ${{ github.base_ref }} && \
+            git tag "→-target-branch-←" origin/${{ github.base_ref }}
+          else
+            git fetch origin ${{ github.event.pull_request.base.ref }} && \
+            git tag "→-target-branch-←" origin/${{ github.event.pull_request.base.ref }}
+          fi
+        shell: bash
+      - name: Fetching Pull Request branch ${{ github.head_ref }}
+        run: |
+          if [ ! -z ${{ github.head_ref }} ]; then
+            git fetch origin ${{ github.head_ref }} && \
+            git tag "→-pull-request-branch-←" origin/${{ github.head_ref }}
+          else
+            git fetch origin ${{ github.event.pull_request.head.ref }} && \
+            git tag "→-pull-request-branch-←" origin/${{ github.event.pull_request.head.ref }}
+          fi
+        shell: bash
+      - name: Checking branch fast-forward-ness
+        run: |
+          if [ ! -z ${{ github.base_ref }} ]; then
+            git merge-base origin/${{ github.base_ref }} origin/${{ github.head_ref }} --is-ancestor && \
+            echo "Branch is ready for merging 👍" && exit 0 || \
+            echo "Branch is not ready for merging yet. Check your tree to investigate 👇" && \
+            git log --graph --abbrev-commit --decorate --simplify-by-decoration --all --format=format:'%C(bold blue)%h%C(reset) - %C(yellow)%aD%C(reset) %C(dim yellow)(%ar)%C(reset)%C(auto)%+d%n %<(80,trunc)' && exit 1
+          else
+            git merge-base origin/${{ github.event.pull_request.base.ref }} origin/${{ github.event.pull_request.head.ref }} --is-ancestor && \
+            echo "Branch is ready for merging 👍" && exit 0 || \
+            echo "Branch is not ready for merging yet. Check your tree to investigate 👇" && \
+            git log --graph --abbrev-commit --decorate --simplify-by-decoration --all --format=format:'%C(bold blue)%h%C(reset) - %C(yellow)%aD%C(reset) %C(dim yellow)(%ar)%C(reset)%C(auto)%+d%n %<(80,trunc)' && exit 1
+          fi
+        shell: bash
