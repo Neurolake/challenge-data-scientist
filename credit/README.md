@@ -6,11 +6,11 @@ Para este problema de negócio, o cientista de dados deverá desenvolver um mode
 
 O **projeto completo** (certos processos seletivos podem pedir apenas parte dele) compreende as seguintes atividades:
 
-1. Entendimento da base e análise exploratória dos dados.
-2. Pré-processamento das variáveis.
-3. Treinamento de um modelo de classificação binária.
-4. Análise técnica da performance do modelo, medida sobre a base de **Teste**.
-5. Análise financeira do modelo. Para este ponto, observe a subseção `Análise financeira`.
+1. **Entendimento da base** e análise exploratória dos dados.
+2. **Pré-processamento** das variáveis.
+3. **Treinamento** de um modelo de classificação binária.
+4. **Análise técnica** da performance do modelo, medida sobre a base de **Teste**.
+5. **Análise financeira** do modelo. Para este ponto, observe a subseção `Análise financeira`.
 
 Artefato mínimo esperado ao fim do projeto:
 
