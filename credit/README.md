@@ -27,7 +27,7 @@ O cientista de dados pode livremente produzir outros artefatos que julgar releva
 
 - O score do modelo de classificação deve mapear a classe Bom Pagador.
 
-- A base de dados está contida na pasta [challenge-recruiting-datascientist/datasets/credit_01](../datasets/credit_01/) e é dividida em 3 partes:
+- A base de dados está contida na pasta [../datasets/credit_01](../datasets/credit_01/) e é dividida em 3 partes:
 
     - **Treino**: base usada para treinamento contendo dados de janeiro a agosto de 2017;
 
