@@ -4,20 +4,19 @@
 
 Para este problema de negócio, o cientista de dados deverá desenvolver um modelo de concessão de crédito (classificação binária) usando as bases descritas na subseção `Dataset` abaixo.
 
-O projeto completo compreende as seguintes atividades:
+O **projeto completo** (certos processos seletivos podem pedir apenas parte dele) compreende as seguintes atividades:
 
 1. Entendimento da base e análise exploratória dos dados.
 2. Pré-processamento das variáveis.
 3. Treinamento de um modelo de classificação binária.
-4. Análise técnica da performance do modelo.
+4. Análise técnica da performance do modelo, medida sobre a base de **Teste**.
 5. Análise financeira do modelo. Para este ponto, observe a subseção `Análise financeira`.
 
-Artefatos mínimos ao fim do projeto:
+Artefato mínimo esperado ao fim do projeto:
 
 1. Um Jupyter Notebook legível, contendo as etapas do projeto.
-2. A base out-of-time escorada.
 
-O cientista de dados pode livremente produzir outros artefatos que julgar relevantes para a apresentação do seu projeto.
+O cientista de dados pode livremente produzir outros artefatos que julgar relevantes para a apresentação do seu projeto. Alguns processos seletivos podem pedir a base Out-of-time escorada.
 
 ### Dataset
 - A base contém **150** variáveis, a maioria das quais está mascarada. Utilize a coluna `ID` como uma _key_.
@@ -34,9 +33,9 @@ O cientista de dados pode livremente produzir outros artefatos que julgar releva
 
     - **Teste**: base usada para testes contendo dados de janeiro a agosto de 2017;
 
-    - **Out-of-time (oot)**: contém dados obtidos de setembro a novembro de 2017. A escoragem dessa base será utilizada para avaliação final do modelo.
+    - **Out-of-time (oot)**: contém dados obtidos de setembro a novembro de 2017. A escoragem dessa base pode ser uma etapa do desafio, a depender das condições e requisitos combinados.
 
-        - A base outoftime é considerada uma base "cega" por não possuir a variável `"TARGET"` (apenas a equipe do prophet possui acesso a essa variável).
+        - A base outoftime é considerada uma base "cega" por não possuir a variável `"TARGET"` (apenas a equipe do Prophet/Neurolake possui acesso a essa variável).
 
 ### Análise financeira
 
