@@ -11,6 +11,7 @@ O **projeto completo** (certos processos seletivos podem pedir apenas parte dele
 3. **Treinamento** de um modelo de classificação binária.
 4. **Análise técnica** da performance do modelo, medida sobre a base de **Teste**.
 5. **Análise financeira** do modelo. Para este ponto, observe a subseção `Análise financeira`.
+6. **Escoragem da base Out-of-time**, para posterior avaliação da performance nessa base com o alvo detido pelo Prophet/Neurolake.
 
 Artefato mínimo esperado ao fim do projeto:
 
