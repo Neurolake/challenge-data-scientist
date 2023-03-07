@@ -4,6 +4,8 @@
 
 Ciência de Dados é uma área multidisciplinar, bem o sabemos, envolvendo estatística, matemática, engenharia de software e conhecimento especialista de negócio. Para este projeto, o cientista de dados colocará o seu chapéu de desenvolvedor e **criará uma API para avaliação de aderência e performance de um modelo de machine learning**.
 
+Você pode utilizar o esqueleto na pasta [../monitoring/app/](../monitoring/app) como ponto de partida para sua API. Para executá-la, crie um ambiente Python (Conda) novo e instale as dependências em [../monitoring/app/requirements.txt](../monitoring/app/requirements.txt) (e outras dependências que ache necessárias).
+
 Entregáveis:
 - O repositório no Github contendo sua API.
 - Um Jupyter notebook, mostrando uma chamada a cada um dos 2 endpoints (dado que, no momento da execução do Notebook localmente, sua API esteja rodando localmente) e contendo o que se pede nos pontos *Como avaliar no Notebook*, das subseções 1.1 e 1.2 abaixo.
