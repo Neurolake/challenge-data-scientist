@@ -23,8 +23,8 @@ O cientista de dados pode livremente produzir outros artefatos que julgar releva
 - A base contém **150** variáveis, a maioria das quais está mascarada. Utilize a coluna `ID` como uma _key_.
 
 - A variável alvo é denominada **TARGET** e possui os seguintes valores:
-    - 1: Bom Pagador, i.e. pagou todo o empréstimo.
-    - 0: Mau Pagador, i.e. não pagou o crédito concedido.
+    - 1: Mau Pagador, i.e. atraso > 60 dias em 2 meses.
+    - 0: Bom Pagador, i.e. caso contrário.
 
 - O score do modelo de classificação deve mapear a classe Bom Pagador.
 
@@ -42,7 +42,7 @@ O cientista de dados pode livremente produzir outros artefatos que julgar releva
 
 Considere que seu cliente já possui uma política de gestão de risco de crédito (que chamaremos de `AS-IS`), que consiste em reprovar qualquer pessoa que tenha **idade** igual ou inferior a 28 anos. Ou seja: se alguém nessa faixa etária solicita crédito à instituição financeira, sua solicitação é negada.
 
-O score gerado pelo modelo de machine learning proposto pode ser utilizado para gerar uma segunda política, chamada `TO-BE`: uma vez que ele mapeia a confiança de que a pessoa irá honrar o empréstimo, o cliente pode substituir o ponto de corte em **Idade** para um ponto de corte no **Score**.
+O score gerado pelo modelo de machine learning proposto pode ser utilizado para gerar uma segunda política, chamada `TO-BE`: uma vez que ele mapeia a propensão da pessoa *não* honrar o empréstimo, o cliente pode substituir o ponto de corte em **Idade** para um novo ponto de corte no **Score**. Perceba que a reprovação do crédito agora ocorrerá *acima* do ponto de corte, e não abaixo, como ocorreu com a idade. Ou seja, se o ponto de corte for `T` (com T entre 0 e 1), então os reprovados serão aqueles com score `score >= T`.
 
 Para realizar a análise financeira do seu modelo, suponha que todas as pessoas da base de **Teste** solicitaram crédito à instituição financeira, na forma de um empréstimo de R$1000,00. Faça o seguinte:
 
@@ -50,6 +50,6 @@ Para realizar a análise financeira do seu modelo, suponha que todas as pessoas 
 
 2. Calcule qual a dívida total (suponha que os inadimplentes não pagaram nenhuma parcela do empréstimo), pela Política AS-IS.
 
-3. Calcule qual o **percentual** das pessoas da base de Teste que tiveram a solicitação negada. Agora **crie um ponto de corte** de seu Score que nega o empréstimo para exatamente o mesmo **percentual** de pessoas (i.e. o empréstimo será negado para quem tiver o Score igual ou inferior ao ponto de corte). Essa é a Política TO-BE.
+3. Calcule qual o **percentual** das pessoas da base de Teste que tiveram a solicitação negada. Agora **crie um ponto de corte** de seu Score que nega o empréstimo para exatamente o mesmo **percentual** de pessoas (i.e. o empréstimo será negado para quem tiver o Score igual ou superior ao ponto de corte). Essa é a Política TO-BE.
 
 4. Calcule o novo tamanho da carteira de crédito aprovado e a dívida total na Política TO-BE.
