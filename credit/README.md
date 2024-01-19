@@ -40,11 +40,11 @@ O cientista de dados pode livremente produzir outros artefatos que julgar releva
 
 ### Análise financeira
 
-Considere que seu cliente já possui uma política de gestão de risco de crédito (que chamaremos de `AS-IS`), que consiste em reprovar qualquer pessoa que tenha **idade** igual ou inferior a 28 anos. Ou seja: se alguém nessa faixa etária solicita crédito à instituição financeira, sua solicitação é negada.
+Considere que seu cliente já possui uma política de gestão de risco de crédito fictícia (que chamaremos de `AS-IS`), que consiste em reprovar qualquer pessoa que tenha **idade** igual ou inferior a 28 anos. Ou seja: se alguém nessa faixa etária solicita crédito à instituição financeira, sua solicitação é negada.
 
-O score gerado pelo modelo de machine learning proposto pode ser utilizado para gerar uma segunda política, chamada `TO-BE`: uma vez que ele mapeia a propensão da pessoa *não* honrar o empréstimo, o cliente pode substituir o ponto de corte em **Idade** para um novo ponto de corte no **Score**. Perceba que a reprovação do crédito agora ocorrerá *acima* do ponto de corte, e não abaixo, como ocorreu com a idade. Ou seja, se o ponto de corte for `T` (com T entre 0 e 1), então os reprovados serão aqueles com score `score >= T`.
+O score gerado pelo modelo de machine learning proposto pode ser utilizado para gerar uma segunda política, chamada `TO-BE`: uma vez que ele mapeia a propensão da pessoa honrar o empréstimo (classe Bom Pagador), o cliente pode substituir o ponto de corte em **Idade** por um novo ponto de corte no **Score**, de modo que as solicitações de crédito na política `TO-BE` serão reprovadas se e somente se o cliente tiver score abaixo deste ponto de corte.
 
-Para realizar a análise financeira do seu modelo, suponha que todas as pessoas da base de **Teste** solicitaram crédito à instituição financeira, na forma de um empréstimo de R$1000,00. Faça o seguinte:
+Para realizar a análise financeira do seu modelo, **considere apenas o mês de agosto de 2017**. suponha que todas as pessoas da base de **Teste** solicitaram crédito à instituição financeira, na forma de um empréstimo de R$1000,00. Faça o seguinte:
 
 1. Calcule qual o tamanho da carteira de crédito aprovado (i.e. quanto de dinheiro a Financeira emprestou) na base de Teste, pela Política AS-IS.
 
