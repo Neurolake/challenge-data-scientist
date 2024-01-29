@@ -50,6 +50,6 @@ Para realizar a análise financeira do seu modelo, **considere apenas o mês de 
 
 2. Calcule qual a dívida total (suponha que os inadimplentes não pagaram nenhuma parcela do empréstimo), pela Política AS-IS.
 
-3. Calcule qual o **percentual** das pessoas da base de Teste que tiveram a solicitação negada. Agora **crie um ponto de corte** de seu Score que nega o empréstimo para exatamente o mesmo **percentual** de pessoas (i.e. o empréstimo será negado para quem tiver o Score igual ou superior ao ponto de corte). Essa é a Política TO-BE.
+3. Calcule qual o **percentual** das pessoas da base de Teste que tiveram a solicitação negada. Agora **crie um ponto de corte** de seu Score que negaria o empréstimo para exatamente o mesmo **percentual** de pessoas. Essa é a Política TO-BE.
 
-4. Calcule o novo tamanho da carteira de crédito aprovado e a dívida total na Política TO-BE.
+4. Calcule o novo tamanho da carteira de crédito aprovado e a dívida total na Política TO-BE. Calcule a economia gerada por seu modelo.
