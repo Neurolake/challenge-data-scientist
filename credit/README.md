@@ -53,3 +53,37 @@ Para realizar a análise financeira do seu modelo, **considere apenas o mês de 
 3. Calcule qual o **percentual** das pessoas da base de Teste que tiveram a solicitação negada. Agora **crie um ponto de corte** de seu Score que negaria o empréstimo para exatamente o mesmo **percentual** de pessoas. Essa é a Política TO-BE.
 
 4. Calcule o novo tamanho da carteira de crédito aprovado e a dívida total na Política TO-BE. Calcule a economia gerada por seu modelo.
+
+
+## Projeto 2: Desenvolver um modelo de recuperação de dívidas
+
+Para este problema de negócio, o cientista de dados deverá desenvolver um modelo de recuperação de dívidas (classificação binária) usando as bases descritas na subseção `Dataset` abaixo.
+
+O **projeto completo** (certos processos seletivos podem pedir apenas parte dele) é similar ao que descrito no Projeto 1, compreende as seguintes atividades:
+
+1. **Entendimento da base** e análise exploratória dos dados.
+2. **Pré-processamento** das variáveis.
+3. **Treinamento** de um modelo de classificação binária.
+4. **Análise técnica** da performance do modelo.
+5. **Análise de negócio (Para Cientista I - OPCIONAL; A partir de Cientista II - Obrigatório)**, interpretando os números obtidos e indicando como o seu modelo de machine learning impactaria positivamente a empresa e seus clientes.
+
+Artefato mínimo esperado ao fim do projeto:
+
+1. Um Jupyter Notebook legível, contendo as etapas do projeto.
+
+O cientista de dados pode livremente produzir outros artefatos que julgar relevantes para a apresentação do seu projeto.
+
+2. Apenas a partir de Cientista II:
+
+Uma apresentação, em Google Slides, Power Point ou algum software de sua preferência, com os principais aprendizados e recomendações da análise de negócios
+
+### Dataset
+- A base contém **203** variáveis, a maioria das quais está mascarada. Utilize a coluna `index` como uma _key_.
+
+- A variável alvo possui os seguintes valores:
+    - 0: Mau Pagador
+    - 1: Bom Pagador
+
+- O score do modelo de classificação deve mapear a classe Bom Pagador.
+
+- A base de dados está contida na pasta [../datasets/credit_02](../datasets/credit_02/)
