@@ -84,6 +84,6 @@ Uma apresentação, em Google Slides, Power Point ou algum software de sua prefe
     - 0: Mau Pagador
     - 1: Bom Pagador
 
-- O score do modelo de classificação deve mapear a classe Bom Pagador.
+- O score do modelo de classificação deve mapear a classe Bom Pagador. **Você deve deixar claro quais foram os critérios utilizados no score para definição das classes de nível de Pagador**
 
 - A base de dados está contida na pasta [../datasets/credit_02](../datasets/credit_02/)
