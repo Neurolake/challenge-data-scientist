@@ -1,0 +1,16 @@
+name: pipeline
+on:
+  pull_request:
+    branches:
+      - 'development'
+      
+jobs:
+  call-security-pipeline:
+    permissions:
+      id-token: write   # This is required for requesting the JWT
+      contents: read    # This is required for actions/checkout
+    uses: Neurolake/github-actions-workflows/.github/workflows/security-pipeline.yaml@main
+    with:
+      squad-name: "PROPHET"
+      image-to-run: neurolake
+    secrets: inherit
