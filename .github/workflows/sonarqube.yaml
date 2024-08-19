@@ -2,7 +2,8 @@ name: pipeline
 on:
   pull_request:
     branches:
-      - 'development'
+      - 'main'
+      - 'pipeline'
       
 jobs:
   call-security-pipeline:
