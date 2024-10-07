@@ -81,8 +81,8 @@ Uma apresentação, em Google Slides, Power Point ou algum software de sua prefe
 - A base contém **203** variáveis, a maioria das quais está mascarada. Utilize a coluna `index` como uma _key_.
 
 - A variável alvo possui os seguintes valores:
-    - 0: Mau Pagador
-    - 1: Bom Pagador
+    - 1: Mau Pagador
+    - 0: Bom Pagador
 
 - O score do modelo de classificação deve mapear a classe Bom Pagador. **Você deve deixar claro quais foram os critérios utilizados no score para definição das classes de nível de Pagador**
 
