@@ -87,3 +87,22 @@ Uma apresentação, em Google Slides, Power Point ou algum software de sua prefe
 - O score do modelo de classificação deve mapear a classe Bom Pagador. **Você deve deixar claro quais foram os critérios utilizados no score para definição das classes de nível de Pagador**
 
 - A base de dados está contida na pasta [../datasets/credit_02](../datasets/credit_02/)
+
+
+## Projeto 3: desenvolver uma solução para Cobrança
+
+Este desafio é mais *open-ended*. Na pasta [../datasets/credit_03](../datasets/credit_03/) você encontrará um dataset de nome `base_cobranca.gz`, com dados relacionados ao problema de cobrança de dívidas associadas a financiamento veicular, com 300000 linhas e 328 colunas, das quais 316 estão mascaradas.
+
+A seguir você encontra as primeiras 3 linhas e 9 colunas:
+
+| id         | documento | mes_pagamento | dias_atraso | segmento_veiculo | saldo_vencido | pagamento | divida_restante | per_pago |
+|------------|-----------|---------------|-------------|------------------|---------------|-----------|-----------------|----------|
+| 0x117651   | 0x722945  | 202301        | 18          | leves            | 1445.37       | 0.00      | 1445.37         | 0.000000 |
+| 0x80136d   | 0x7fa1e8  | 202301        | 28          | motos            | 426.84        | 426.84    | 0.00            | 1.000000 |
+| 0x839c27   | 0x724e31  | 202301        | 30          | leves            | 1381.98       | 1381.98   | 0.00            | 1.000000 |
+
+A forma de ler o conteúdo desta primeira linha é a seguinte: o cliente de ID 0x117651, no mês 202301, estava com 18 dias de atraso e com saldo devedor de R$1445,37, mas ele efetuou o pagamento integral da dívida.
+
+Obs.: para possibilitar a leitura da base `base_cobranca.gz`, considere que ela foi salva usando o caracter `\t` como separador.
+
+**Objetivo**: seu objetivo neste desafio é criar uma solução que consiga melhorar a taxa de conversão de dívidas usando machine learning (seja com um modelo único, seja com um modelo por persona). Use os 4 últimos meses (na coluna `mes_pagamento`) como definição da base de validação "out of time".
