@@ -101,7 +101,7 @@ A seguir você encontra as primeiras 3 linhas e 9 colunas:
 | 0x80136d   | 0x7fa1e8  | 202301        | 28          | motos            | 426.84        | 426.84    | 0.00            | 1.000000 |
 | 0x839c27   | 0x724e31  | 202301        | 30          | leves            | 1381.98       | 1381.98   | 0.00            | 1.000000 |
 
-A forma de ler o conteúdo desta primeira linha é a seguinte: o cliente de ID 0x117651, no mês 202301, estava com 18 dias de atraso e com saldo devedor de R$1445,37, mas ele efetuou o pagamento integral da dívida.
+A forma de ler o conteúdo da primeira linha é a seguinte: o cliente de ID 0x117651, no mês 202301, estava com 18 dias de atraso e com saldo devedor de R$1445,37, e não pagou nada da dívida. Já o segundo cliente, na segunda linha, pagou integralmente a dívida.
 
 Obs.: para possibilitar a leitura da base `base_cobranca.gz`, considere que ela foi salva usando o caracter `\t` como separador.
 
