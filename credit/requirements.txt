@@ -1,0 +1,6 @@
+python ==
+pandas ==
+scikit-learn ==
+seaborn ==
+matplotib ==
+
