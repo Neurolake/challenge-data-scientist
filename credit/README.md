@@ -106,3 +106,35 @@ A forma de ler o conteúdo da primeira linha é a seguinte: o cliente de ID 0x11
 Obs.: para possibilitar a leitura da base `base_cobranca.gz`, considere que ela foi salva usando o caracter `\t` como separador.
 
 **Objetivo**: seu objetivo neste desafio é criar uma solução que consiga melhorar a taxa de conversão de dívidas usando machine learning (seja com um modelo único, seja com um modelo por persona). Use os 4 últimos meses (na coluna `mes_pagamento`) como definição da base de validação "out of time".
+
+## Projeto 4: modelo de propensão a fraude em financiamento veicular
+
+A base de dados [../datasets/base_antifraude.gz](../datasets/base_antifraude.gz) contém informações sobre propostas de financiamento veicular, definidas pelas colunas `id`, `documento`, `mes_ref` e `vlr_financiado` (valor do financiamento concedido).  O nosso objetivo aqui é mapear e alertar os clientes fraudadores trazendo o mínimo de impacto e o máximo de retorno financeiro à operação do cliente (portanto, alertando poucos casos, mas com alta precisão).  Para isso, utilizamos o `alvo`, que nesse caso representa o _first payment default_, ou seja, o não-pagamento da primeira parcela do financiamento.  Esse `alvo` apresenta alta correlação com a **autofraude**, que são aqueles clientes mal-intencionados que solicitaram o financiamento já na intenção de realizar um golpe. 
+
+### Objetivo 
+
+Desenvolver um modelo de machine learning capaz de prever o _first payment default_ com alta precisão, minimizando o impacto na operação do cliente e maximizando o retorno financeiro. Resumo das características da base: há 47732 linhas e 205 colunas na base, das quais estas não estão mascaradas:
+
+* `id`: Identificador único da proposta de financiamento. 
+* `documento`: Número do documento do cliente. 
+* `mes_ref`: Mês de referência da proposta. 
+* `vlr_financiado`: Valor do financiamento concedido. 
+* `alvo`: Variável alvo, indicando se o cliente não pagou a primeira parcela (1) ou pagou (0).
+
+As demais variáveis encontram-se mascaradas.
+
+### Entrega 
+
+A entrega do desafio deve ser feita em um Jupyter Notebook (mínimo), possivelmente em um repositório GitHub (diferencial).  Além do notebook, espera-se que o candidato crie uma breve apresentação executiva de slides com o resultado de negócio do seu modelo. 
+
+### Critérios de Avaliação 
+
+O desafio será avaliado com base nos seguintes critérios: 
+
+* Legibilidade do código
+* Qualidade da análise Exploratória de Dados (EDA)
+* Criação de hipóteses
+* Uso Correto de Técnicas para: 
+    * O Pré-processamento de Dados 
+    * Modelagem 
+    * Validação adequada e madura dos modelos 
